@@ -35,7 +35,7 @@ class FirewallController extends BaseAdminController
         return $this->generateRedirect(URL::getInstance()->absoluteUrl('/admin/module/FirewallControl'));
     }
 
-    public function clearAllEntries()
+    public function clearAll()
     {
         if (null !== $response = $this->checkAuth(AdminResources::MODULE, 'FirewallControl', AccessManager::DELETE)) {
             return $response;
