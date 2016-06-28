@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="firewall.control.clear.entry" path="/admin/module/firewallcontrol/clear/{entryId}">
+        <default key="_controller">FirewallControl\Controller\FirewallController::clearEntry</default>
+        <requirement key="entryId">\d+</requirement>
+    </route>
+
+    <route id="firewall.control.clear.all" path="/admin/module/firewallcontrol/clearAll">
+        <default key="_controller">FirewallControl\Controller\FirewallController::clearAll</default>
+    </route>
+</routes>

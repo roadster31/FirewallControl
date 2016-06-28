@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://thelia.net/schema/dic/module"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
+    <fullnamespace>FirewallControl\FirewallControl</fullnamespace>
+    <descriptive locale="en_US">
+        <title>Thelia form firewall control</title>
+    </descriptive>
+    <descriptive locale="fr_FR">
+        <title>Contrôle du pare-feu des formulaires Thelia</title>
+    </descriptive>
+    <languages>
+        <language>en_US</language>
+        <language>fr_FR</language>
+    </languages>
+    <version>1.0.0</version>
+    <authors>
+        <author>
+            <name>Franck Allimant</name>
+            <company>CQFDev</company>
+            <email>franck@cqfdev.fr</email>
+            <website>www.cqfdev.fr</website>
+        </author>
+    </authors>
+    <type>classic</type>
+    <thelia>2.3.0</thelia>
+    <stability>prod</stability>
+</module>

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-12 general-block-decorator">
+        <div class="form-container">
+            <div class="row">
+                <div class="col-md-12">
+                    {ifloop rel='entries'}
+                    <div class="table-responsive">
+                        <table class="table table-condensed table-hover table-striped">
+                            <caption class="clearfix">
+                                {intl d='firewallcontrol.bo.default' l="Form firewall control"}
+
+                                {loop name="auth-create" type="auth" role="ADMIN" resource="admin.module" access="CREATE" module="MegaPromo"}
+                                    <div class="pull-right">
+                                        <a href="{url path='/admin/module/firewallcontrol/clearAll'}" class="btn btn-default btn-danger">
+                                            <i class="glyphicon glyphicon-remove"></i> {intl d='firewallcontrol.bo.default' l="Delete all"}
+                                        </a>
+                                    </div>
+                                {/loop}
+                            </caption>
+
+                            <tr>
+                                <th>{intl d='firewallcontrol.bo.default' l='ID'}</th>
+                                <th>{intl d='firewallcontrol.bo.default' l='Form name'}</th>
+                                <th>{intl d='firewallcontrol.bo.default' l='IP Address'}</th>
+                                <th class="text-center">{intl d='firewallcontrol.bo.default' l='Attempts'}</th>
+                                <th class="text-center">{intl d='firewallcontrol.bo.default' l='Last attempt date'}</th>
+                                <th class="text-center">{intl d='firewallcontrol.bo.default' l='Delete'}</th>
+                            </tr>
+                            {loop type="firewall.control" name="entries"}
+                                <tr>
+                                    <td>{$ID}</td>
+                                    <td>{$FORM_NAME}</td>
+                                    <td><a target="_ip_details" href="http://ip-api.com/#{$IP_ADDRESS}">{$IP_ADDRESS}</a></td>
+                                    <td class="text-center">{$ATTEMPTS}</td>
+                                    <td class="text-center">{format_date date=$DATE}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-xs btn-danger" href="{url path="/admin/module/firewallcontrol/clear/$ID"}">
+                                            <i class="glyphicon glyphicon-remove"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {/loop}
+                        </table>
+                    </div>
+                    {/ifloop}
+                    {elseloop rel='entries'}
+                        <div class="alert alert-info">{intl d='firewallcontrol.bo.default' l="The firewall log table is empty."}</div>
+                    {/elseloop}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

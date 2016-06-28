@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <loops>
+        <loop name="firewall.control" class="FirewallControl\Loop\FirewallLoop" />
+    </loops>
+
+    <commands>
+        <command class="FirewallControl\Command\Clear"/>
+    </commands>
+
+    <hooks>
+        <hook id="firewallcontrol.hook" class="FirewallControl\Hook\HookManager">
+            <tag name="hook.event_listener" event="configuration.system-bottom" type="back" method="onConfigurationSystemBottom" />
+            <tag name="hook.event_listener" event="module.configuration" type="back" method="onModuleConfigure" />
+        </hook>
+    </hooks>
+</config>
