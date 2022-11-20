@@ -8,10 +8,6 @@
         <loop name="firewall.control" class="FirewallControl\Loop\FirewallLoop" />
     </loops>
 
-    <commands>
-        <command class="FirewallControl\Command\Clear"/>
-    </commands>
-
     <hooks>
         <hook id="firewallcontrol.hook" class="FirewallControl\Hook\HookManager">
             <tag name="hook.event_listener" event="configuration.system-bottom" type="back" method="onConfigurationSystemBottom" />
